@@ -76,11 +76,11 @@ $(function() {
             var menuIcon = $('.menu-icon-link');
 
             // First click
-            menuIcon.click();
+            menuIcon.trigger('click');
             expect(body.hasClass('menu-hidden')).toBe(false);
 
             // Second click
-            menuIcon.click();
+            menuIcon.trigger('click');
             expect(body.hasClass('menu-hidden')).toBe(true);
         });
     });
