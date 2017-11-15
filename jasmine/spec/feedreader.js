@@ -96,36 +96,44 @@ $(function() {
          */
         beforeEach(function(done) {
             loadFeed(0, done);
-            });
+        });
 
         it('should load at least one blog post', function(){
             expect($('.feed .entry').length).toBeGreaterThan(0);
-            done();
         });
     });
 
     /* TODO: Write a new test suite named "New Feed Selection" */
     describe('New Feed Selection', function() {
-        /* TODO: Write a test that ensures when a new feed is loaded
-         * by the loadFeed function that the content actually changes.
-         * Remember, loadFeed() is asynchronous.
-         */
+    
         var initialFeed,
             secondFeed;
-
-        beforeEach(function(done) {
+        // QUESTION: Why does this not work?
+        // beforeEach(function(done) {
+        //     loadFeed(0, function() {
+        //         initialFeed = $('.feed').html();
+        //     });
+        //     console.log(initialFeed);
+        //     loadFeed(1, function() {
+        //         secondFeed = $('.feed').html();
+        //         done()
+        //     });
+        //     console.log(secondFeed);
+        // });
+        beforeEach(function(done){
             loadFeed(0, function() {
                 initialFeed = $('.feed').html();
-            });
-            loadFeed(1, function(){
-                secondFeed = $('.feed').html();
-                done();
-            });
-        });
+                // console.log(initialFeed);
+                loadFeed(1, function(){
+                    secondFeed = $('.feed').html();
+                    // console.log(secondFeed);
+                    done()
+                });
+            })
+        })
 
-        it('should change feed content', function(done){
+        it('should change feed content', function(){
             expect(initialFeed).not.toEqual(secondFeed);
-            done();
         });
     });
 }());
