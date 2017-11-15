@@ -15,7 +15,14 @@ See more on Feed Reader Testing [Project Rubric](https://review.udacity.com/#!/p
 
 # How to run the project
 
-1. Clone the repo
-2. Load the project using your desired web server
-  - Tip for VSCode user's: use [live server](https://github.com/ritwickdey/live-server-web-extension) extension.
+1. Clone this repository
+
+```
+git clone git@github.com:ronalson/frontend-nanodegree-feedreader.git
+```
+
+2. Load the `index.html` in your browser
+
+  
+> Tip for VSCode users: use [live server](https://github.com/ritwickdey/live-server-web-extension) extension to run the project
 
