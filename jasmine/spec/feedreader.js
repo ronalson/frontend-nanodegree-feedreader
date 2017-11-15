@@ -95,12 +95,10 @@ $(function() {
          * the use of Jasmine's beforeEach and asynchronous done() function.
          */
         beforeEach(function(done) {
-            loadFeed(0, function() {
-                done();
+            loadFeed(0, done);
             });
-        });
 
-        it('should load at least one blog post', function(done){
+        it('should load at least one blog post', function(){
             expect($('.feed .entry').length).toBeGreaterThan(0);
             done();
         });
