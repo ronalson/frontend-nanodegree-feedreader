@@ -72,7 +72,7 @@ $(function() {
           * should have two expectations: does the menu display when
           * clicked and does it hide when clicked again.
           */
-        it('should toggle when button is clicked', function(){
+        it('visibility should change when button is clicked', function(){
             var menuIcon = $('.menu-icon-link');
             
             // First checks if menu is hidden or not
