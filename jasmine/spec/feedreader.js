@@ -74,14 +74,23 @@ $(function() {
           */
         it('should toggle when button is clicked', function(){
             var menuIcon = $('.menu-icon-link');
-
-            // First click
-            menuIcon.trigger('click');
-            expect(body.hasClass('menu-hidden')).toBe(false);
-
-            // Second click
-            menuIcon.trigger('click');
-            expect(body.hasClass('menu-hidden')).toBe(true);
+            
+            // First checks if menu is hidden or not
+            body.hasClass('menu-hidden') ? (
+                // Click to open
+                menuIcon.trigger('click'),
+                expect(body.hasClass('menu-hidden')).toBe(false),
+                // Click to close
+                menuIcon.trigger('click'),
+                expect(body.hasClass('menu-hidden')).toBe(true)
+            ) : ( // or
+                // Click to close
+                menuIcon.trigger('click'),
+                expect(body.hasClass('menu-hidden')).toBe(true),
+                // Click to open
+                menuIcon.trigger('click'),
+                expect(body.hasClass('menu-hidden')).toBe(false)
+            );         
         });
     });
         
